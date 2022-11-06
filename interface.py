@@ -40,6 +40,11 @@ class Ui_MainWindow(object):
         self.support_btn = QtWidgets.QPushButton(self.widget)
         self.support_btn.setObjectName("support_btn")
         self.verticalLayout_2.addWidget(self.support_btn)
+
+        self.check_btn = QtWidgets.QPushButton(self.widget)
+        self.check_btn.setObjectName("check_btn")
+        self.verticalLayout_2.addWidget(self.check_btn)
+
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.listWidget = QtWidgets.QListWidget(self.widget)
         self.listWidget.setObjectName("listWidget")
@@ -115,11 +120,14 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Music Popgdse"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Music Player"))
         self.download_btn.setText(_translate("MainWindow", "Открыть файл"))
         self.downloadCatalog_btn.setText(_translate("MainWindow", "Окрыть папку"))
         self.savePlaylist_btn.setText(_translate("MainWindow", "Сохранить плейлист"))
         self.playlists.setText(_translate("MainWindow", "Плейлисты"))
         self.support_btn.setText(_translate("MainWindow", "Поддержка"))
+
+        self.check_btn.setText(_translate("MainWindow", "Ok, let's go"))
+
         self.timePlaying.setText(_translate("MainWindow", "00:00"))
         self.lenTimeMusic.setText(_translate("MainWindow", "00:00"))

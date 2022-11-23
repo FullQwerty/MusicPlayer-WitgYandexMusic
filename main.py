@@ -4,6 +4,7 @@ import os
 from mutagen.mp3 import MP3
 from interface import Ui_MainWindow
 from support import Support
+from yandex import Yandex
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QMediaPlaylist
 from PyQt5.QtCore import QUrl
@@ -30,6 +31,7 @@ class MediaPlayer(QMainWindow, Ui_MainWindow):
         self.stopButton.clicked.connect(self.stop_music)
         self.downloadCatalog_btn.clicked.connect(self.download_playlist)
         self.support_btn.clicked.connect(self.support)
+        self.yandex_btn.clicked.connect(self.yandex)
         self.savePlaylist_btn.clicked.connect(self.save_playlist)
         self.replay_btn.clicked.connect(self.replay)
         self.random_btn.clicked.connect(self.random)
@@ -200,6 +202,10 @@ class MediaPlayer(QMainWindow, Ui_MainWindow):
     def support(self):
         self.support = Support()
         self.support.show()
+
+    def yandex(self):
+        self.yandex = Yandex()
+        self.yandex.show()
 
 
 if __name__ == "__main__":

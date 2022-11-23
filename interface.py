@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from styles import style
 
 
 class Ui_MainWindow(object):
@@ -16,6 +17,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(798, 496)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("background-color: #B5F2EA;")
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -25,25 +27,31 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+
         self.download_btn = QtWidgets.QPushButton(self.widget)
         self.download_btn.setObjectName("download_btn")
         self.verticalLayout_2.addWidget(self.download_btn)
+        self.download_btn.setStyleSheet(style)
         self.downloadCatalog_btn = QtWidgets.QPushButton(self.widget)
         self.downloadCatalog_btn.setObjectName("downloadCatalog_btn")
         self.verticalLayout_2.addWidget(self.downloadCatalog_btn)
+        self.downloadCatalog_btn.setStyleSheet(style)
         self.savePlaylist_btn = QtWidgets.QPushButton(self.widget)
         self.savePlaylist_btn.setObjectName("savePlaylist_btn")
         self.verticalLayout_2.addWidget(self.savePlaylist_btn)
+        self.savePlaylist_btn.setStyleSheet(style)
         self.playlists = QtWidgets.QPushButton(self.widget)
         self.playlists.setObjectName("playlists")
         self.verticalLayout_2.addWidget(self.playlists)
-        self.support_btn = QtWidgets.QPushButton(self.widget)
-        self.support_btn.setObjectName("support_btn")
-        self.verticalLayout_2.addWidget(self.support_btn)
-
+        self.playlists.setStyleSheet(style)
         self.yandex_btn = QtWidgets.QPushButton(self.widget)
         self.yandex_btn.setObjectName("yandex_btn")
         self.verticalLayout_2.addWidget(self.yandex_btn)
+        self.yandex_btn.setStyleSheet(style)
+        self.support_btn = QtWidgets.QPushButton(self.widget)
+        self.support_btn.setObjectName("support_btn")
+        self.verticalLayout_2.addWidget(self.support_btn)
+        self.support_btn.setStyleSheet(style)
 
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.listWidget = QtWidgets.QListWidget(self.widget)
@@ -84,7 +92,7 @@ class Ui_MainWindow(object):
         self.replay_btn = QtWidgets.QPushButton(self.centralwidget)
         self.replay_btn.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("contents/restart.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("contents/reset.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.replay_btn.setIcon(icon4)
         self.replay_btn.setObjectName("replay_btn")
         self.horizontalLayout_2.addWidget(self.replay_btn)

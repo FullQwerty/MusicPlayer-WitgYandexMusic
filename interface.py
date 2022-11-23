@@ -132,10 +132,8 @@ class Ui_MainWindow(object):
         self.download_btn.setText(_translate("MainWindow", "Открыть файл"))
         self.downloadCatalog_btn.setText(_translate("MainWindow", "Окрыть папку"))
         self.savePlaylist_btn.setText(_translate("MainWindow", "Сохранить плейлист"))
-        self.playlists.setText(_translate("MainWindow", "Плейлисты"))
+        self.playlists.setText(_translate("MainWindow", "Загрузить плейлист"))
         self.support_btn.setText(_translate("MainWindow", "Поддержка"))
-
         self.yandex_btn.setText(_translate("MainWindow", "Яндекс.Музыка"))
-
         self.timePlaying.setText(_translate("MainWindow", "00:00"))
         self.lenTimeMusic.setText(_translate("MainWindow", "00:00"))

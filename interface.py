@@ -9,7 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import *
 from styles import style
+from PyQt5.QtGui import QIcon
 
 
 class Ui_MainWindow(object):
@@ -55,8 +57,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.listWidget = QtWidgets.QListWidget(self.widget)
+       # self.listWidget.setMovement(QListView.Free)
         self.listWidget.setObjectName("listWidget")
         self.horizontalLayout.addWidget(self.listWidget)
+
         self.verticalLayout.addWidget(self.widget)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -128,7 +132,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
+
         MainWindow.setWindowTitle(_translate("MainWindow", "Music Player"))
+        MainWindow.setWindowIcon(QIcon("contents/logo.png"))
         self.download_btn.setText(_translate("MainWindow", "Открыть файл"))
         self.downloadCatalog_btn.setText(_translate("MainWindow", "Окрыть папку"))
         self.savePlaylist_btn.setText(_translate("MainWindow", "Сохранить плейлист"))

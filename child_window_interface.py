@@ -15,7 +15,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(490, 399)
-        Form.setStyleSheet("background-color: #B5F2EA;")
+        Form.setStyleSheet("background-color: #FFFFFF;")
         self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.widget = QtWidgets.QWidget(Form)
@@ -62,7 +62,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "<html><head/><body><p>Версия: 0.001(alpha)</p><p>Разработчик: </p><p>Если вдруг возникли проблемы, заполните форму.</p></body></html>"))
+        self.label.setText(_translate("Form", "<html><head/><body><p>Версия: 0.001(alpha)</p><p>Разработчик: Пивсаева Наталья Евгеньевна</p><p>Если вдруг возникли проблемы, заполните форму.</p></body></html>"))
         self.messageLabel.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Все отправлено! </span></p><p>Спасибо!</p></body></html>"))
         self.label_2.setText(_translate("Form", "Почта(необязательно)"))
         self.label_3.setText(_translate("Form", "Опишите проблему"))

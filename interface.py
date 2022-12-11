@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from styles import style
+from styles import slider_style
 from PyQt5.QtGui import QIcon
 
 
@@ -18,8 +19,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(798, 496)
+
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setStyleSheet("background-color: #B5F2EA;")
+     #   self.centralwidget.setStyleSheet("background-color: #B5F2EA;")
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -96,7 +98,7 @@ class Ui_MainWindow(object):
         self.replay_btn = QtWidgets.QPushButton(self.centralwidget)
         self.replay_btn.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("contents/reset.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("contents/restart.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.replay_btn.setIcon(icon4)
         self.replay_btn.setObjectName("replay_btn")
         self.horizontalLayout_2.addWidget(self.replay_btn)
@@ -114,6 +116,8 @@ class Ui_MainWindow(object):
         self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
         self.horizontalSlider.setObjectName("horizontalSlider")
         self.horizontalLayout_2.addWidget(self.horizontalSlider)
+        self.horizontalSlider.setStyleSheet(slider_style)
+
         self.lenTimeMusic = QtWidgets.QLabel(self.centralwidget)
         self.lenTimeMusic.setObjectName("lenTimeMusic")
         self.horizontalLayout_2.addWidget(self.lenTimeMusic)

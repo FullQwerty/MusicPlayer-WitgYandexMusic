@@ -24,10 +24,10 @@ class Support(QWidget, Ui_Form):
             else:
                 flag = Support.check(self, mail)
                 if not flag:
-                    self.label_2.setText("Такой почты нету!")
+                    self.label_2.setText("Такой почты не существует")
                     raise TypeError
             if not bool(problem):
-                self.label_3.setText("Опишите проблему!!!")
+                self.label_3.setText("Опишите проблему")
                 raise TypeError
             information = [mail, problem]
             token = '5786906777:AAF4Prtt-Xx8PNw6gXSDx7n6_6nu-SqF6LI'

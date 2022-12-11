@@ -15,6 +15,14 @@ class MediaPlayer(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.put_widgets()
+        f = open('resources/darkorange.stylesheet', 'r')
+        self.styleData = f.read()
+        f.close()
+        self.setStyleSheet(self.styleData)
+        self.show()
+
+    def put_widgets(self):
         self.data, self.play_mod = [], 2
         self.player = QMediaPlayer(self)
         self.playlist = QMediaPlaylist(self)
@@ -211,5 +219,6 @@ class MediaPlayer(QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     App = MediaPlayer()
+    app.setStyle('plastique')
     App.show()
     sys.exit(app.exec_())

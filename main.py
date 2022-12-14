@@ -1,5 +1,6 @@
 import sys
 import os
+import subprocess
 
 from mutagen.mp3 import MP3
 from interface import Ui_MainWindow
@@ -27,6 +28,7 @@ class MediaPlayer(QMainWindow, Ui_MainWindow):
         self.player = QMediaPlayer(self)
         self.playlist = QMediaPlaylist(self)
         self.player.setPlaylist(self.playlist)
+        self.yandex_btn.clicked.connect(self.play_ym)
         self.player_music, self.load_music = False, False
         self.horizontalSlider.sliderReleased.connect(self.change_time)
         self.player.positionChanged.connect(self.print_time_music)
@@ -49,6 +51,25 @@ class MediaPlayer(QMainWindow, Ui_MainWindow):
             self.player.setPosition(self.horizontalSlider.sliderPosition() * 1000)
         else:
             self.horizontalSlider.setSliderPosition(0)
+
+    def play_ym(self):
+        subprocess.run("./ym.sh")
+        catalog_artists = "./ym_src/.YMcache/"
+        for name_artist in os.listdir(catalog_artists):
+            catalog = catalog_artists + name_artist
+            for song_name in os.listdir(catalog):
+                if song_name[song_name.rfind('.') + 1:] == "mp3":
+                    try:
+                        if os.path.join(catalog , song_name) in self.data:
+                            break
+                        else:
+                            self.data.append(os.path.join(catalog , song_name))
+                            self.listWidget.addItem(name_artist + " - " + song_name[:song_name.rfind('.')])
+                            url = QUrl.fromLocalFile(os.path.join(catalog , song_name))
+                            self.playlist.addMedia(QMediaContent(url))
+                    except Exception:
+                        continue
+
 
     def download_playlist(self):
         try:

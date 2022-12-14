@@ -9,13 +9,19 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import *
+from styles import style
+from styles import slider_style
+from PyQt5.QtGui import QIcon
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(798, 496)
+
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+     #   self.centralwidget.setStyleSheet("background-color: #B5F2EA;")
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -25,30 +31,38 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+
         self.download_btn = QtWidgets.QPushButton(self.widget)
         self.download_btn.setObjectName("download_btn")
         self.verticalLayout_2.addWidget(self.download_btn)
+        self.download_btn.setStyleSheet(style)
         self.downloadCatalog_btn = QtWidgets.QPushButton(self.widget)
         self.downloadCatalog_btn.setObjectName("downloadCatalog_btn")
         self.verticalLayout_2.addWidget(self.downloadCatalog_btn)
+        self.downloadCatalog_btn.setStyleSheet(style)
         self.savePlaylist_btn = QtWidgets.QPushButton(self.widget)
         self.savePlaylist_btn.setObjectName("savePlaylist_btn")
         self.verticalLayout_2.addWidget(self.savePlaylist_btn)
+        self.savePlaylist_btn.setStyleSheet(style)
         self.playlists = QtWidgets.QPushButton(self.widget)
         self.playlists.setObjectName("playlists")
         self.verticalLayout_2.addWidget(self.playlists)
-        self.support_btn = QtWidgets.QPushButton(self.widget)
-        self.support_btn.setObjectName("support_btn")
-        self.verticalLayout_2.addWidget(self.support_btn)
-
+        self.playlists.setStyleSheet(style)
         self.yandex_btn = QtWidgets.QPushButton(self.widget)
         self.yandex_btn.setObjectName("yandex_btn")
         self.verticalLayout_2.addWidget(self.yandex_btn)
+        self.yandex_btn.setStyleSheet(style)
+        self.support_btn = QtWidgets.QPushButton(self.widget)
+        self.support_btn.setObjectName("support_btn")
+        self.verticalLayout_2.addWidget(self.support_btn)
+        self.support_btn.setStyleSheet(style)
 
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.listWidget = QtWidgets.QListWidget(self.widget)
+       # self.listWidget.setMovement(QListView.Free)
         self.listWidget.setObjectName("listWidget")
         self.horizontalLayout.addWidget(self.listWidget)
+
         self.verticalLayout.addWidget(self.widget)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -102,6 +116,8 @@ class Ui_MainWindow(object):
         self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
         self.horizontalSlider.setObjectName("horizontalSlider")
         self.horizontalLayout_2.addWidget(self.horizontalSlider)
+        self.horizontalSlider.setStyleSheet(slider_style)
+
         self.lenTimeMusic = QtWidgets.QLabel(self.centralwidget)
         self.lenTimeMusic.setObjectName("lenTimeMusic")
         self.horizontalLayout_2.addWidget(self.lenTimeMusic)
@@ -120,14 +136,14 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
+
         MainWindow.setWindowTitle(_translate("MainWindow", "Music Player"))
+        MainWindow.setWindowIcon(QIcon("contents/logo.png"))
         self.download_btn.setText(_translate("MainWindow", "Открыть файл"))
         self.downloadCatalog_btn.setText(_translate("MainWindow", "Окрыть папку"))
         self.savePlaylist_btn.setText(_translate("MainWindow", "Сохранить плейлист"))
-        self.playlists.setText(_translate("MainWindow", "Плейлисты"))
+        self.playlists.setText(_translate("MainWindow", "Загрузить плейлист"))
         self.support_btn.setText(_translate("MainWindow", "Поддержка"))
-
         self.yandex_btn.setText(_translate("MainWindow", "Яндекс.Музыка"))
-
         self.timePlaying.setText(_translate("MainWindow", "00:00"))
         self.lenTimeMusic.setText(_translate("MainWindow", "00:00"))

